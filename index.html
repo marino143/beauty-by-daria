@@ -12,6 +12,11 @@
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://daria-lash.com/">
 
+<link rel="alternate" hreflang="hr" href="https://daria-lash.com/">
+<link rel="alternate" hreflang="en" href="https://daria-lash.com/en/">
+<link rel="alternate" hreflang="de" href="https://daria-lash.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://daria-lash.com/">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://daria-lash.com/">
@@ -95,6 +100,9 @@
       <a href="#cjenik">Cjenik</a>
       <a href="#o-meni">O meni</a>
       <a href="#kontakt">Kontakt</a>
+      <span class="lang-switcher">
+        <a href="/" class="active">HR</a> · <a href="/en/">EN</a> · <a href="/de/">DE</a>
+      </span>
     </nav>
     <a href="https://buker.hr/salon/beauty-by-daria" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Rezerviraj</a>
   </div>
@@ -241,8 +249,28 @@
   </div>
 </footer>
 
+<button class="back-to-top" aria-label="Natrag na vrh" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Back-to-top show/hide on scroll
+  const btt = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    btt.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Auto-redirect on first visit based on browser language
+  (function(){
+    try{
+      if (sessionStorage.getItem('langRedirected')) return;
+      sessionStorage.setItem('langRedirected','1');
+      const l = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (l.startsWith('de')) { location.replace('/de/'); return; }
+      if (l.startsWith('en')) { location.replace('/en/'); return; }
+    }catch(e){}
+  })();
+
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
