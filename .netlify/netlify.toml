@@ -8,7 +8,7 @@ redirects = []
 
 [build]
 publish = "/Users/marinoglazarair/Documents/Co Work/Lash2"
-publishOrigin = "default"
+publishOrigin = "ui"
 
 [build.environment]
 

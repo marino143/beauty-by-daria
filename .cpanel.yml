@@ -5,4 +5,6 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH/images
     - /bin/cp -f index.html $DEPLOYPATH
     - /bin/cp -f style.css $DEPLOYPATH
+    - /bin/cp -f robots.txt $DEPLOYPATH
+    - /bin/cp -f sitemap.xml $DEPLOYPATH
     - /bin/cp -rf images/. $DEPLOYPATH/images/
