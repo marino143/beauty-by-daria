@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lbdaria/public_html/
+    - /bin/mkdir -p $DEPLOYPATH/images
+    - /bin/cp -f index.html $DEPLOYPATH
+    - /bin/cp -f style.css $DEPLOYPATH
+    - /bin/cp -rf images/. $DEPLOYPATH/images/
