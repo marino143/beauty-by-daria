@@ -7,6 +7,7 @@ deployment:
     - /bin/cp -f style.css $DEPLOYPATH
     - /bin/cp -f robots.txt $DEPLOYPATH
     - /bin/cp -f sitemap.xml $DEPLOYPATH
+    - /bin/cp -f .htaccess $DEPLOYPATH
     - /bin/cp -rf images/. $DEPLOYPATH/images/
     - /bin/cp -rf en/. $DEPLOYPATH/en/
     - /bin/cp -rf de/. $DEPLOYPATH/de/

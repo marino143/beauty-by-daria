@@ -1,0 +1,7 @@
+# Netlify redirects
+/en/about-me      /en/#o-meni      301
+/en/about-me/     /en/#o-meni      301
+/en/services      /en/#usluge      301
+/en/services/     /en/#usluge      301
+/galerija         /                301
+/galerija/        /                301
