@@ -1,11 +1,9 @@
 # 301 redirects for old URLs
 RewriteEngine On
 
-# Old EN pages → EN homepage with anchor
-RewriteRule ^en/about-me/?$ /en/#o-meni [R=301,L]
-RewriteRule ^en/services/?$ /en/#usluge [R=301,L]
-
-# Old gallery (no longer exists) → HR homepage
+# Old indexed URLs → homepage
+RewriteRule ^en/about-me/?$ / [R=301,L]
+RewriteRule ^en/services/?$ / [R=301,L]
 RewriteRule ^galerija/?$ / [R=301,L]
 
 # Force HTTPS
