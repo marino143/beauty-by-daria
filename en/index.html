@@ -47,6 +47,16 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-LCLEKQPGMX');
+
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="buker.hr"]');
+    if (link && typeof gtag === 'function') {
+      gtag('event', 'click_buker', {
+        event_category: 'engagement',
+        event_label: link.href
+      });
+    }
+  }, true);
 </script>
 </head>
 <body>
