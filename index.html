@@ -279,17 +279,6 @@
     btt.classList.toggle('visible', window.scrollY > 400);
   });
 
-  // Auto-redirect on first visit based on browser language
-  (function(){
-    try{
-      if (sessionStorage.getItem('langRedirected')) return;
-      sessionStorage.setItem('langRedirected','1');
-      const l = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      if (l.startsWith('de')) { location.replace('/de/'); return; }
-      if (l.startsWith('en')) { location.replace('/en/'); return; }
-    }catch(e){}
-  })();
-
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
