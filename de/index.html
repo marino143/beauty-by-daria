@@ -40,11 +40,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCLEKQPGMX"></script>
+<!-- Google Consent Mode v2 — default denied, updated by cookie banner -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  try {
+    if (localStorage.getItem('cc_consent') === 'granted') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  } catch(e) {}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCLEKQPGMX"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'G-LCLEKQPGMX');
 
@@ -216,9 +236,25 @@
 <footer class="footer">
   <div class="container footer-inner">
     <p>© <span id="year"></span> <a href="https://codigit.hr" target="_blank" rel="noopener">Co Digit</a>. Alle Rechte vorbehalten.</p>
-    <p><a href="https://daria-lash.com">daria-lash.com</a></p>
+    <p>
+      <a href="/de/datenschutz.html">Datenschutz</a> ·
+      <a href="https://daria-lash.com/de/">daria-lash.com</a>
+    </p>
   </div>
 </footer>
+
+<!-- Cookie consent banner -->
+<div id="cc-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#241a16;color:#f4ece2;padding:20px 24px;z-index:1000;box-shadow:0 -4px 24px rgba(0,0,0,.2);font-size:14px;line-height:1.5">
+  <div style="max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:16px;justify-content:space-between">
+    <p style="flex:1;min-width:260px;margin:0">
+      Wir verwenden Cookies für Analyse und Anzeigenmessung. Sie können alle oder nur die notwendigen akzeptieren. Details in unserer <a href="/de/datenschutz.html" style="color:#b48a6e;text-decoration:underline">Datenschutzerklärung</a>.
+    </p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="cc-reject" style="padding:10px 20px;border:1px solid #6b5d55;background:transparent;color:#f4ece2;font-family:inherit;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px">Ablehnen</button>
+      <button id="cc-accept" style="padding:10px 20px;border:none;background:#b48a6e;color:#fff;font-family:inherit;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px">Alle akzeptieren</button>
+    </div>
+  </div>
+</div>
 
 <button class="back-to-top" aria-label="Nach oben" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
@@ -232,6 +268,29 @@
       if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
     });
   });
+
+  // Cookie consent banner
+  (function(){
+    var banner = document.getElementById('cc-banner');
+    if (!banner) return;
+    try {
+      if (!localStorage.getItem('cc_consent')) banner.style.display = 'block';
+    } catch(e) { banner.style.display = 'block'; }
+    document.getElementById('cc-accept').addEventListener('click', function(){
+      try { localStorage.setItem('cc_consent', 'granted'); } catch(e) {}
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted', ad_user_data: 'granted',
+          ad_personalization: 'granted', analytics_storage: 'granted'
+        });
+      }
+      banner.style.display = 'none';
+    });
+    document.getElementById('cc-reject').addEventListener('click', function(){
+      try { localStorage.setItem('cc_consent', 'denied'); } catch(e) {}
+      banner.style.display = 'none';
+    });
+  })();
 </script>
 </body>
 </html>
