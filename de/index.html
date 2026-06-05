@@ -37,7 +37,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../images/logo.png" fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="../style.css?v=20260605">
 
 <!-- Google Consent Mode v2 — default denied, updated by cookie banner -->
@@ -102,7 +105,7 @@
 
 <section id="home" class="hero">
   <div class="container hero-inner">
-    <img src="../images/logo.png" alt="Beauty by Daria" class="hero-logo">
+    <img src="../images/logo.png" alt="Beauty by Daria" class="hero-logo" fetchpriority="high" width="220" height="220">
     <p class="eyebrow">● Beauty Studio ●</p>
     <h1>Eleganz in <em>jedem Detail</em></h1>
     <p class="lead">Wimpernverlängerung, Brauen­gestaltung, professionelle Haarentfernung und Beauty-Behandlungen in gemütlichem Ambiente. Deine Schönheit — meine Leidenschaft.</p>
@@ -317,7 +320,8 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   const btt = document.querySelector('.back-to-top');
-  window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 400); });
+  let bttTick = false;
+  window.addEventListener('scroll', () => { if (bttTick) return; bttTick = true; requestAnimationFrame(() => { btt.classList.toggle('visible', window.scrollY > 400); bttTick = false; }); }, { passive: true });
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const t = document.querySelector(a.getAttribute('href'));
