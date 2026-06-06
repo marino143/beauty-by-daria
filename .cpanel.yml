@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/lbdaria/public_html/
-    - /bin/mkdir -p $DEPLOYPATH/images $DEPLOYPATH/en $DEPLOYPATH/de
+    - /bin/mkdir -p $DEPLOYPATH/images $DEPLOYPATH/en $DEPLOYPATH/de $DEPLOYPATH/fonts
     - /bin/cp -f index.html $DEPLOYPATH
     - /bin/cp -f privatnost.html $DEPLOYPATH
     - /bin/cp -f style.css $DEPLOYPATH
@@ -10,5 +10,6 @@ deployment:
     - /bin/cp -f sitemap.xml $DEPLOYPATH
     - /bin/cp -f .htaccess $DEPLOYPATH
     - /bin/cp -rf images/. $DEPLOYPATH/images/
+    - /bin/cp -rf fonts/. $DEPLOYPATH/fonts/
     - /bin/cp -rf en/. $DEPLOYPATH/en/
     - /bin/cp -rf de/. $DEPLOYPATH/de/
