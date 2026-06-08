@@ -19,9 +19,22 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Correct MIME + bulletproof long cache for self-hosted fonts
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2?|ttf|otf)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
 </IfModule>
 
 # Compression
