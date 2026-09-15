@@ -91,11 +91,16 @@ a{color:inherit;text-decoration:none}
 .price-group{font-family:var(--serif);font-size:26px;font-weight:500;color:var(--accent-dark);margin:40px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);letter-spacing:.5px}
 .price-group:first-child{margin-top:0}
 .price-list{list-style:none}
-.price-list li{display:flex;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1px dashed var(--line);font-size:17px}
+.price-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:18px 0;border-bottom:1px dashed var(--line);font-size:17px}
 .price-list li:last-child{border-bottom:none}
 .price-list span:first-child{font-weight:400;letter-spacing:1px;text-transform:uppercase;font-size:14px}
 .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
 .price{font-family:var(--serif);font-size:22px;color:var(--accent);font-weight:600}
+/* sidrena (dodatna) cijena — obvezna uz svaku cijenu od 1.10.2026. (NN 101/2026) */
+.price-anchor{flex-basis:100%;text-align:right;font-size:12px;letter-spacing:.4px;color:var(--muted);line-height:1.4}
+.price-note{max-width:720px;margin:32px auto 0;font-size:13px;color:var(--muted);line-height:1.7;text-align:center}
+.price-note a{color:var(--accent-dark);text-decoration:underline;text-underline-offset:2px}
+.price-note a:hover{color:var(--accent)}
 
 /* ABOUT */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}

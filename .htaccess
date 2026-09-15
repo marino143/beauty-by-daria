@@ -30,6 +30,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 <IfModule mod_mime.c>
   AddType font/woff2 .woff2
   AddType font/woff .woff
+  AddType "text/csv; charset=utf-8" .csv
 </IfModule>
 <IfModule mod_headers.c>
   <FilesMatch "\.(woff2?|ttf|otf)$">
