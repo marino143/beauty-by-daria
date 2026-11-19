@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/lbdaria/public_html/
-    - /bin/mkdir -p $DEPLOYPATH/images $DEPLOYPATH/en $DEPLOYPATH/de $DEPLOYPATH/fonts $DEPLOYPATH/cjenik
+    - /bin/mkdir -p $DEPLOYPATH/images $DEPLOYPATH/en $DEPLOYPATH/de $DEPLOYPATH/fonts $DEPLOYPATH/cjenik $DEPLOYPATH/ekstenzije-trepavica $DEPLOYPATH/lash-lift $DEPLOYPATH/puder-obrve $DEPLOYPATH/depilacija
     - /bin/cp -f index.html $DEPLOYPATH
     - /bin/cp -f privatnost.html $DEPLOYPATH
     - /bin/cp -f style.css $DEPLOYPATH
@@ -14,3 +14,7 @@ deployment:
     - /bin/cp -rf cjenik/. $DEPLOYPATH/cjenik/
     - /bin/cp -rf en/. $DEPLOYPATH/en/
     - /bin/cp -rf de/. $DEPLOYPATH/de/
+    - /bin/cp -rf ekstenzije-trepavica/. $DEPLOYPATH/ekstenzije-trepavica/
+    - /bin/cp -rf lash-lift/. $DEPLOYPATH/lash-lift/
+    - /bin/cp -rf puder-obrve/. $DEPLOYPATH/puder-obrve/
+    - /bin/cp -rf depilacija/. $DEPLOYPATH/depilacija/
