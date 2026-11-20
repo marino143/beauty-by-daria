@@ -5,6 +5,10 @@ RewriteEngine On
 RewriteRule ^en/about-me/?$ / [R=301,L]
 RewriteRule ^en/services/?$ / [R=301,L]
 RewriteRule ^galerija/?$ / [R=301,L]
+RewriteRule ^en/contact/?$ /en/#kontakt [R=301,NE,L]
+
+# Old WordPress theme files → gone
+RewriteRule ^wp-content/ - [G,L]
 
 # www → apex
 RewriteCond %{HTTP_HOST} ^www\.daria-lash\.com$ [NC]
