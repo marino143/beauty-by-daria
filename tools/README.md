@@ -2,8 +2,10 @@
 
 - Source of truth: this repo (github.com/marino143/beauty-by-daria). cPanel account `lbdaria` pulls it into
   `~/repositories/beauty-by-daria` and `.cpanel.yml` copies files into `public_html`.
-- Deploy: commit, then `tools/deploy.sh` (push + cPanel pull + deploy). Token: `~/.openclaw/secrets/daria-lash/cpanel.env`
-  (expires 2027-11-17). Use host s040.cubrad.eu:2083; cpanel.codigit.hr has an expired certificate.
+- Deploy: commit, then `tools/deploy.sh` (push, then over SSH `git pull` in `~/repositories/beauty-by-daria` and run the
+  `.cpanel.yml` tasks). SSH: `lbdaria@s040.cubrad.eu` port 22022, key `~/.ssh/daria-lash-deploy` (opened by Cubrad 2026-11-21).
+  The cPanel API on :2083 is behind Imunify WebShield; token in `~/.openclaw/secrets/daria-lash/cpanel.env` (expires 2027-11-17)
+  is only a fallback.
 - Service pages are generated: `python3 tools/gen_pages.py` (reads prices from index.html). New top-level dirs must be
   added to `.cpanel.yml`.
 - Bazna cijena (Pravilnik NN 132/2026): on a price change publish a NEW CSV in `cjenik/` by 11:00 that day, named
