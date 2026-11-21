@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://daria-lash.com/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="hr" href="https://daria-lash.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daria-lash.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://daria-lash.com/de/"/>
@@ -27,18 +27,22 @@
   </url>
   <url>
     <loc>https://daria-lash.com/ekstenzije-trepavica/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://daria-lash.com/lash-lift/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://daria-lash.com/obrve/</loc>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://daria-lash.com/puder-obrve/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://daria-lash.com/depilacija/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
   </url>
 </urlset>

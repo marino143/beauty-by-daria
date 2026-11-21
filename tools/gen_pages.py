@@ -13,9 +13,19 @@ ROOT = Path(__file__).resolve().parent.parent
 BUKER = "https://buker.hr/salon/beauty-by-daria"
 SITE = "https://daria-lash.com"
 
+REVIEWS = {'ekstenzije-trepavica': [('Barbara Maletić', 'Odlično iskustvo od početka do kraja! Daria je jako ljubazna, profesionalna i ugodna, a rezultat je prekrasan – trepavice izgledaju točno onako kako sam željela. Topla preporuka svima koji žele kvalitetne i lijepe ekstenzije trepavica.'),
+    ('Nika Bahmet', 'Prezadovoljna sam uslugom! Daria je vrlo profesionalna, ljubazna i pažljiva. Trepavice su ispale točno onako kako sam željela – prirodne, uredne i prekrasno oblikovane.'),
+    ('Ive Ma', 'Trepavice su napravljene vrlo uredno i precizno, a rezultat je jednostavno prekrasan. Odmah se vidi da se radi s puno pažnje i ljubavi prema detaljima.')], 'lash-lift': [('Hana Perković', 'Danas sam došla sa Trešnjevke na, kako kažu, najbolji lash lift. I stvarno je najbolji. Daria je jedan veliki profesionalac. Izrazito pristupačna.'),
+    ('Lucija', 'Daria je jako pedantna i profesionalna, a lash lift nikad ljepši! Lokacija je pristupačna, prostor jako lijepo uređen i atmosfera ugodna.'),
+    ('Ema Bahmet', 'Radila sam trepavice i brow lift, a rezultat je fantastičan, upravo onakav kakav sam željela. Trepavice izgledaju predivno, uredno i prirodno, a brow lift je savršeno oblikovao obrve.')], 'puder-obrve': [('Kristina Šajnović', 'Jako sam zadovoljna njenom uslugom, pedantnošću i naravno finalnim rezultatom. Radile smo puder obrve koje je skroz prilagodila mom licu i obliku mojih prirodnih obrva.'),
+    ('Mimi Tomic', 'Veoma sam zadovoljna, jako lijepe puder obrve, hvala puno ❤️')], 'depilacija': [('Eva Marinovic', 'Radila sam depilacije s 4 vrste voska i pinceta i Lash &amp; Brow Lift. Jako sam zadovoljna rezultatom! Sve radi jako uredno, precizno i pažljivo. Veliki plus je i parking.')], 'obrve': [('Darija Čiček', 'Do sada mi nitko nije napravio tako savršene obrve kao Daria. Presretna sam što sam našla tako pedantnu i profesionalnu osobu kojoj se mogu prepustiti u ruke bez straha.'),
+    ('Ema Bahmet', 'Radila sam trepavice i brow lift, a rezultat je fantastičan, upravo onakav kakav sam željela. Brow lift je savršeno oblikovao obrve.'),
+    ('Dora Žugec', 'Lijep je ugođaj, a obrve su dobro i lijepo napravljene. Jako sam zadovoljna.')]}
+
 PAGES = [
     {
         "slug": "ekstenzije-trepavica",
+        "card": "ekstenzije trepavica",
         "nav": "Ekstenzije trepavica",
         "title": "Ekstenzije trepavica Sesvete | Ugradnja i nadopuna — Beauty by Daria",
         "desc": "Ugradnja ekstenzija trepavica u Sesvetama (Soblinec): ugradnja 55 €, nadopuna 35 €, skidanje 10 €. Prirodan ili bujniji izgled, prilagođen tvom oku. Rezerviraj online.",
@@ -43,6 +53,7 @@ PAGES = [
     },
     {
         "slug": "lash-lift",
+        "card": "lash lift",
         "nav": "Lash & brow lift",
         "title": "Lash lift i brow lift Sesvete | Bojanje trepavica — Beauty by Daria",
         "desc": "Lash lift 35 €, brow lift 30 €, brow lift s bojanjem 35 € i bojanje trepavica 6 € u Sesvetama (Soblinec). Podignute trepavice i uredne obrve bez ekstenzija.",
@@ -67,7 +78,36 @@ PAGES = [
         ],
     },
     {
+        "slug": "obrve",
+        "nav": "Laminacija i oblikovanje obrva",
+        "card": "laminacija obrva",
+        "title": "Laminacija obrva Sesvete | Brow lift, bojanje, threading — Beauty by Daria",
+        "desc": "Laminacija obrva (brow lift) 30 €, s bojanjem 35 €, threading obrva 8 € u Sesvetama (Soblinec). Gušće, uredne obrve u obliku koji ti pristaje. Rezerviraj online.",
+        "h1": "Laminacija i oblikovanje obrva <em>u Sesvetama</em>",
+        "lead": "Laminacija obrva (brow lift), bojanje i oblikovanje koncem u studiju u Soblincu, nekoliko minuta od centra Sesveta.",
+        "groups": [("Lash &amp; Brow lift", ["Brow lift", "Brow lift + bojanje obrva bojom"]), ("Threading", ["Threading obrva"])],
+        "body": [
+            ("Laminacija obrva (brow lift)", [
+                "Laminacija obrva usmjerava dlačice i fiksira ih u željenom smjeru, pa obrve izgledaju gušće, punije i urednije. Na engleskom se zove brow lamination ili brow lift. Rezultat je prirodan, a obrve ujutro ne treba posebno slagati.",
+                "Laminacija se može napraviti sama ili zajedno s bojanjem obrva bojom, kad želiš izraženiju nijansu.",
+            ]),
+            ("Oblikovanje koncem (threading)", [
+                "Threading je oblikovanje obrva koncem, bez voska. Precizan je i za fine dlačice, a dobro dođe i kao završni korak nakon laminacije.",
+            ]),
+            ("Trajni rezultat", [
+                "Ako želiš obrve koje izgledaju uređeno bez svakodnevne šminke, pogledaj i <a href=\"/puder-obrve/\">puder obrve</a>, tehniku trajne šminke.",
+            ]),
+        ],
+        "faq": [
+            ("Koliko košta laminacija obrva?", "Laminacija obrva (brow lift) je 30 €, a laminacija s bojanjem obrva bojom 35 €. Threading obrva je 8 €."),
+            ("Koja je razlika između laminacije i puder obrva?", "Laminacija oblikuje tvoje prirodne dlačice i ne dira kožu. Puder obrve su trajna šminka koja popunjava obrve pigmentom."),
+            ("Mogu li uz laminaciju obrva napraviti i lash lift?", "Da, oba tretmana mogu se napraviti u istom terminu. Rezerviraj obje usluge na Bukeru."),
+            ("Kako rezervirati termin?", "Termin rezerviraš online preko Bukera, gdje vidiš sve slobodne termine."),
+        ],
+    },
+    {
         "slug": "puder-obrve",
+        "card": "puder obrve",
         "nav": "Puder obrve i permanent make up",
         "title": "Puder obrve i permanent make up Sesvete | Trajna šminka — Beauty by Daria",
         "desc": "Puder obrve 150 €, permanent lips 200 €, korekcije 100 € — trajna šminka u Sesvetama (Soblinec). Oblik prilagođen tvom licu i prirodnim obrvama.",
@@ -93,6 +133,7 @@ PAGES = [
     },
     {
         "slug": "depilacija",
+        "card": "depilacija voskom",
         "nav": "Depilacija i threading",
         "title": "Depilacija voskom Sesvete | Brazilska, noge, threading — Beauty by Daria",
         "desc": "Depilacija toplim voskom u Sesvetama (Soblinec): brazilska 16 €, cijele noge 21 €, pazuh 9 €, nadusnica 7 €. Threading obrva 8 €. Rezerviraj online.",
@@ -123,6 +164,13 @@ def price_groups(index_html):
     return groups
 
 
+def pick(items_html, names):
+    if not names:
+        return items_html
+    keep = [l for l in items_html.split("\n") if re.search(r"<li><span>(.*?)</span>", l) and html.unescape(re.search(r"<li><span>(.*?)</span>", l).group(1)) in names]
+    return "\n".join(keep)
+
+
 def offers(items_html):
     out = []
     for name, price in re.findall(r'<li><span>(.*?)</span><span class="dots"></span><span class="price">([\d,]+) €</span>', items_html):
@@ -140,8 +188,10 @@ def build(index_html, page, groups):
     price_html = ""
     all_offers = []
     for g in page["groups"]:
-        price_html += f'      <h3 class="price-group">{g}</h3>\n      <ul class="price-list">\n{groups[g]}\n      </ul>\n'
-        all_offers += offers(groups[g])
+        g, names = g if isinstance(g, tuple) else (g, None)
+        items = pick(groups[g], names)
+        price_html += f'      <h3 class="price-group">{g}</h3>\n      <ul class="price-list">\n{items}\n      </ul>\n'
+        all_offers += offers(items)
 
     body_html = ""
     for h, paras in page["body"]:
@@ -150,6 +200,22 @@ def build(index_html, page, groups):
     faq_html = "".join(
         f'      <details class="faq-item"><summary>{q}</summary><p>{a}</p></details>\n' for q, a in page["faq"]
     )
+
+    reviews_html = "".join(
+        f'      <div class="review-card">\n        <div class="review-stars">★★★★★</div>\n'
+        f'        <p class="review-text">„{t}“</p>\n        <div class="review-author">\n'
+        f'          <div class="review-avatar">{n[0]}</div>\n          <div>\n'
+        f'            <div class="review-name">{n}</div>\n            <div class="review-src">Google recenzija</div>\n'
+        f'          </div>\n        </div>\n      </div>\n'
+        for n, t in REVIEWS.get(page["slug"], [])
+    )
+    if reviews_html:
+        reviews_html = (
+            '<section class="section">\n  <div class="container">\n    <h2 class="center">Što kažu klijentice</h2>\n'
+            f'    <div class="reviews">\n{reviews_html}    </div>\n'
+            '    <p class="center"><a href="https://www.google.com/maps?cid=6743832913942023737" target="_blank" rel="noopener">Sve recenzije na Googleu →</a></p>\n'
+            '  </div>\n</section>\n\n'
+        )
 
     others = "".join(
         f'        <a href="/{p["slug"]}/">{p["nav"]}</a>\n' for p in PAGES if p["slug"] != page["slug"]
@@ -207,7 +273,7 @@ def build(index_html, page, groups):
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/style.css?v=20261118">
+<link rel="stylesheet" href="/style.css?v=20261121">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 {tracking}
 </head>
@@ -256,7 +322,7 @@ def build(index_html, page, groups):
   </div>
 </section>
 
-<section class="section">
+{reviews_html}<section class="section">
   <div class="container prose">
     <h2>Česta pitanja</h2>
 {faq_html}  </div>
@@ -278,8 +344,15 @@ def build(index_html, page, groups):
 {tail}"""
 
 
+def local_links():
+    links = " · ".join(f'<a href="/{p["slug"]}/">{p["card"]} Sesvete</a>' for p in PAGES)
+    return f'<p class="local-links"><!-- local-links -->{links}<!-- /local-links --></p>'
+
+
 def main():
     index_html = (ROOT / "index.html").read_text(encoding="utf-8")
+    index_html = re.sub(r'<p class="local-links"><!-- local-links -->.*?<!-- /local-links --></p>', local_links(), index_html)
+    (ROOT / "index.html").write_text(index_html, encoding="utf-8")
     groups = price_groups(index_html)
     for page in PAGES:
         out = ROOT / page["slug"] / "index.html"
