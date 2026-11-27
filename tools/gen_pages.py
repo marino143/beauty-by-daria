@@ -344,15 +344,8 @@ def build(index_html, page, groups):
 {tail}"""
 
 
-def local_links():
-    links = " · ".join(f'<a href="/{p["slug"]}/">{p["card"]} Sesvete</a>' for p in PAGES)
-    return f'<p class="local-links"><!-- local-links -->{links}<!-- /local-links --></p>'
-
-
 def main():
     index_html = (ROOT / "index.html").read_text(encoding="utf-8")
-    index_html = re.sub(r'<p class="local-links"><!-- local-links -->.*?<!-- /local-links --></p>', local_links(), index_html)
-    (ROOT / "index.html").write_text(index_html, encoding="utf-8")
     groups = price_groups(index_html)
     for page in PAGES:
         out = ROOT / page["slug"] / "index.html"
